@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chúc mừng sinh nhật bé Chan</title>
+<title>Ngày của bé Chan</title>
 
 <style>
 
