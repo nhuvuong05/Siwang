@@ -155,7 +155,7 @@ Sinh nhật người đặc biệt 💫
 <div class="envelope" id="letter">
 <div class="card">
 
-<h2>🎂 Happy Birthday bé Chan 🎂</h2>
+<h2>🎂 Happy Birthday Chan 🎂</h2>
 
 <p>
 Chúc bé <b>Quách Thị Thu Trang</b> (24/02/2026)  
