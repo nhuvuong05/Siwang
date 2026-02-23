@@ -15,11 +15,6 @@ box-sizing:border-box;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 }
 
-html,body{
-height:100%;
-}
-
-/* NỀN HỒNG + CĂN GIỮA */
 body{
 min-height:100dvh;
 display:flex;
@@ -27,11 +22,10 @@ justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 padding:20px;
-position:relative;
 overflow-x:hidden;
 }
 
-/* ===== FORM LOGIN ===== */
+/* FORM */
 
 .box{
 width:100%;
@@ -41,7 +35,6 @@ padding:32px 24px;
 border-radius:26px;
 text-align:center;
 box-shadow:0 20px 50px rgba(0,0,0,.25);
-margin:auto;                /* QUAN TRỌNG: giữ giữa */
 }
 
 h3{
@@ -78,42 +71,44 @@ opacity:.6;
 display:none;
 }
 
-/* ===== THIỆP ===== */
+/* ===== OVERLAY GIỮA MÀN HÌNH ===== */
 
 .envelope{
 display:none;
 
-/* CĂN GIỮA CHUẨN MỌI MÀN HÌNH */
 position:fixed;
-inset:0;
-margin:auto;
+top:0;
+left:0;
+width:100%;
+height:100%;
 
+display:none;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+}
+
+/* KHUNG THIỆP */
+
+.card{
 width:min(92vw,520px);
 max-height:85dvh;
 overflow:auto;
-
 background:white;
 padding:34px 26px;
 border-radius:28px;
 text-align:center;
 box-shadow:0 30px 70px rgba(0,0,0,.3);
-
 animation:open .6s ease;
 }
 
-/* animation mở */
 @keyframes open{
-from{
-opacity:0;
-transform:scale(.85);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
+from{opacity:0;transform:scale(.85)}
+to{opacity:1;transform:scale(1)}
 }
 
-.envelope p{
+.card p{
 font-size:clamp(16px,4vw,18px);
 line-height:1.65;
 margin:12px 0;
@@ -125,7 +120,7 @@ font-size:clamp(22px,5vw,28px);
 margin-bottom:6px;
 }
 
-/* ===== TIM BAY ===== */
+/* TIM */
 
 .hearts{
 position:fixed;
@@ -136,10 +131,7 @@ pointer-events:none;
 }
 
 @keyframes fly{
-to{
-transform:translateY(-120vh);
-opacity:0;
-}
+to{transform:translateY(-120vh);opacity:0;}
 }
 
 </style>
@@ -159,7 +151,9 @@ Sinh nhật người đặc biệt 💫
 </div>
 </div>
 
+<!-- OVERLAY -->
 <div class="envelope" id="letter">
+<div class="card">
 
 <h2>🎂 Happy Birthday bé Chan 🎂</h2>
 
@@ -170,17 +164,20 @@ và luôn xinh đẹp 💖
 </p>
 
 <p>
-Cảm ơn em vì đã đến bên anh,luôn bên cạnh và chia sẻ những khi anh cần🤭 
+Cảm ơn em vì đã đến bên anh, luôn bên cạnh và chia sẻ những khi anh cần 🤭  
 làm cuộc sống của anh ấm áp và ý nghĩa hơn mỗi ngày 🌹
 </p>
 
 <p>
 Hy vọng mọi sinh nhật sau này  
-anh vẫn luôn được ở cạnh em☺️
-chúc em cười thật nhiều, hạnh phúc thật lâu, gửi những điều tốt đẹp nhất đến với em✨
+anh vẫn luôn được ở cạnh em ☺️  
+chúc em cười thật nhiều, hạnh phúc thật lâu,  
+gửi những điều tốt đẹp nhất đến với em ✨
+</p>
 
 <p><i>Người tạo: Nguyễn Như Vương</i></p>
 
+</div>
 </div>
 
 <script>
@@ -192,28 +189,21 @@ let p=document.getElementById("pass").value.trim();
 if(p==="240204"){
 
 document.getElementById("loginBox").style.display="none";
-document.getElementById("letter").style.display="block";
 
-/* tim bay */
+let letter=document.getElementById("letter");
+letter.style.display="flex";   // QUAN TRỌNG: flex để căn giữa
 
 for(let i=0;i<30;i++){
-
 let h=document.createElement("div");
-
 h.className="hearts";
 h.innerHTML="💖";
-
 h.style.left=Math.random()*100+"vw";
 h.style.animationDelay=Math.random()*2+"s";
-
 document.body.appendChild(h);
-
 }
 
 }else{
-
 document.getElementById("wrong").style.display="block";
-
 }
 
 }
