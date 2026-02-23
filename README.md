@@ -164,7 +164,7 @@ Sinh nhật người đặc biệt 💫
 <h2>🎂 Chúc mừng sinh nhật bé Chan 🎂</h2>
 
 <p>
-Chúc <b>Quách Thị Thu Trang</b> (24/02/2004)  
+Chúc bé <b>Quách Thị Thu Trang</b> (24/02/2026)  
 một tuổi mới thật nhiều niềm vui, hạnh phúc  
 và luôn xinh đẹp 💖
 </p>
