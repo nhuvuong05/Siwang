@@ -170,14 +170,14 @@ và luôn xinh đẹp 💖
 </p>
 
 <p>
-Cảm ơn em vì đã đến bên anh,  
+Cảm ơn em vì đã đến bên anh,luôn bên cạnh và chia sẻ những khi anh cần🤭 
 làm cuộc sống của anh ấm áp và ý nghĩa hơn mỗi ngày 🌹
 </p>
 
 <p>
 Hy vọng mọi sinh nhật sau này  
-anh vẫn luôn được ở cạnh em,  
-chúc em cười thật nhiều, hạnh phúc thật lâu ✨
+anh vẫn luôn được ở cạnh em, và anh hy vọng lần sau sẽ là anh☺️
+chúc em cười thật nhiều, hạnh phúc thật lâu, gửi những điều tót đẹp nhất đến với em✨
 
 <p><i>Người tạo: Nguyễn Như Vương</i></p>
 
