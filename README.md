@@ -2,79 +2,75 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- QUAN TRỌNG: giúp web tự co theo màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chúc mừng sinh nhật bé Chan</title>
 
 <style>
 
-*{box-sizing:border-box}
+/* reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
 
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,system-ui,Roboto;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 padding:20px;
-overflow:hidden;
 }
 
-/* ===== FORM NHẬP PASS ===== */
+/* ===== FORM ===== */
 
 .box{
 width:100%;
-max-width:360px;
+max-width:380px;
 background:white;
-padding:28px 22px;
-border-radius:22px;
+padding:30px 22px;
+border-radius:24px;
 text-align:center;
-box-shadow:0 15px 35px rgba(0,0,0,.18);
-animation:fade .6s ease;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1}
+box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
 h3{
-margin-top:0;
-font-size:20px;
+font-size:clamp(18px,4vw,22px);
+margin-bottom:12px;
 }
 
+/* input tự co */
 input{
 width:100%;
 padding:16px;
-font-size:20px;
+font-size:clamp(16px,4vw,20px);
 border-radius:14px;
 border:1px solid #ddd;
 text-align:center;
-margin-top:8px;
-outline:none;
 }
 
-input:focus{
-border:1px solid #ff4d6d;
-}
-
+/* nút tự co */
 button{
 width:100%;
-margin-top:16px;
+margin-top:14px;
 padding:16px;
 border:none;
 border-radius:16px;
 background:#ff4d6d;
 color:white;
-font-size:18px;
+font-size:clamp(16px,4vw,18px);
 font-weight:600;
 }
 
+/* chữ sai pass */
 .fadeText{
-margin-top:12px;
+margin-top:10px;
 font-size:14px;
-color:#888;
 opacity:.5;
 display:none;
 }
@@ -87,29 +83,32 @@ position:fixed;
 left:50%;
 top:50%;
 transform:translate(-50%,-50%);
-width:92%;
-max-width:420px;
-max-height:80vh;
+width:min(92%,500px);
+max-height:85vh;
 overflow:auto;
 background:white;
-padding:28px 22px;
-border-radius:24px;
-box-shadow:0 20px 45px rgba(0,0,0,.25);
+padding:30px 24px;
+border-radius:26px;
 text-align:center;
-animation:open .7s ease;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+animation:open .6s ease;
 }
 
 @keyframes open{
-from{transform:translate(-50%,-40%) scale(.7);opacity:0}
-to{transform:translate(-50%,-50%) scale(1);opacity:1}
+from{opacity:0;transform:translate(-50%,-40%) scale(.8)}
+to{opacity:1;transform:translate(-50%,-50%) scale(1)}
 }
 
 .envelope p{
+font-size:clamp(16px,4vw,18px);
 line-height:1.6;
-font-size:17px;
+margin:10px 0;
 }
 
-h2{color:#ff4d6d}
+h2{
+color:#ff4d6d;
+font-size:clamp(22px,5vw,28px);
+}
 
 /* ===== TIM BAY ===== */
 
@@ -134,9 +133,14 @@ opacity:0;
 
 <div class="box" id="loginBox">
 <h3>🔐 Nhập mật mã để mở thư</h3>
+
 <input id="pass" type="password" placeholder="Nhập 6 số">
+
 <button onclick="check()">Mở thư 💌</button>
-<div class="fadeText" id="wrong">Sinh nhật người đặc biệt 💫</div>
+
+<div class="fadeText" id="wrong">
+Sinh nhật người đặc biệt 💫
+</div>
 </div>
 
 <div class="envelope" id="letter">
@@ -146,7 +150,7 @@ opacity:0;
 <p>
 Chúc <b>Quách Thị Thu Trang</b> (24/02/2004)  
 một tuổi mới thật nhiều niềm vui, hạnh phúc  
-và luôn xinh đẹp rạng rỡ 💖
+và luôn xinh đẹp 💖
 </p>
 
 <p>
@@ -167,8 +171,8 @@ chúc em cười thật nhiều, hạnh phúc thật lâu ✨
 <script>
 
 function check(){
+
 let p=document.getElementById("pass").value.trim();
-let wrong=document.getElementById("wrong");
 
 if(p==="240204"){
 
@@ -176,20 +180,32 @@ document.getElementById("loginBox").style.display="none";
 document.getElementById("letter").style.display="block";
 
 /* tim bay */
+
 for(let i=0;i<30;i++){
+
 let h=document.createElement("div");
+
 h.className="hearts";
+
 h.innerHTML="💖";
+
 h.style.left=Math.random()*100+"vw";
+
 h.style.animationDelay=Math.random()*2+"s";
+
 document.body.appendChild(h);
+
 }
 
 }else{
-wrong.style.display="block";
+
+document.getElementById("wrong").style.display="block";
+
 }
 
 }
+
+/* Enter mở */
 
 document.getElementById("pass").addEventListener("keydown",e=>{
 if(e.key==="Enter") check();
